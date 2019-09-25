@@ -1,0 +1,84 @@
+[color]
+  branch = auto
+  diff = auto
+  grep = auto
+  interactive = auto
+  status = auto
+  status = auto
+  ui = auto
+
+[alias]
+  ap = add --patch
+  b = branch
+  branches = branch -a
+  ci = commit
+  cie = commit --allow-empty
+  co = checkout
+  com = checkout master
+  d = diff
+  ds = diff --staged
+  fix = commit --amend --no-edit
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lf = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
+  lol = !"git add -A; git commit -am \"$(echo $(curl -s http://whatthecommit.com/index.txt)\"\")\""
+  ma = merge --abort
+  mc = merge --continue
+  pf = push --force-with-lease
+  pom = push origin master
+  prune = fetch --prune
+  r = reset
+  rank = shortlog -sn --no-merges
+  ra = rebase --abort
+  rc = rebase --continue
+  rrm = rebase master
+  remotes = remote -v
+  rim = rebase -i master
+  rr = restore
+  s = status -sb
+  sp = stash pop
+  stash-all = stash save --include-untracked
+  sw = switch
+  swm = switch master
+  tags = tag -l
+  undo = reset --soft HEAD^
+  wd = diff --color-words
+  wip = !git add . && git commit -am 'WIP :construction:'
+
+[core]
+  editor = subl -w -n
+  excludesfile = ~/.gitignore
+  pager = diff-so-fancy | less --tabs=4 -R
+  whitespace = warn
+
+[push]
+  default = current
+  followTags = true
+
+[user]
+  email = samuelspordeus@gmail.com
+  name = Samuel Pordeus
+
+[merge]
+  conflictstyle = diff3
+  ff = false
+
+[pull]
+  rebase = true
+
+[commit]
+  template = ~/.gitmessage
+
+[status]
+  showUntrackedFiles = all
+
+[diff]
+  tool = icdiff
+
+[difftool]
+  prompt = false
+
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
