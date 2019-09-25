@@ -1,4 +1,4 @@
-# @ricardoruwer .dotfiles
+# dotfiles
 
 macOS and developer environment preferences
 
