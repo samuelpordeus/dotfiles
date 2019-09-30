@@ -59,8 +59,6 @@ brew 'mas'
 
 mas 'Amphetamine', id: 937984704
 mas 'Clocker', id: 1056643111
-mas 'Shush', id: 496437906
-mas 'TranslateTab', id: 458887729
 
 # CASK
 tap 'caskroom/cask'
@@ -68,11 +66,10 @@ tap 'homebrew/cask-versions'
 brew 'brew-cask-completion'
 
 cask 'alfred3'
-cask 'authy'
+cask '1password'
 cask 'cloudapp'
 cask 'dash'
 cask 'docker'
-cask 'fantastical'
 cask 'google-backup-and-sync'
 cask 'google-chrome-beta'
 cask 'grammarly'
@@ -88,5 +85,5 @@ cask 'slack'
 cask 'spectacle'
 cask 'spotify'
 cask 'visual-studio-code'
+cask 'rescuetime'
 cask 'the-unarchiver'
-cask 'typora'

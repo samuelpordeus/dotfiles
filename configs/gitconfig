@@ -45,7 +45,7 @@
   wip = !git add . && git commit -am 'WIP :construction:'
 
 [core]
-  editor = subl -w -n
+  editor = code
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -R
   whitespace = warn
