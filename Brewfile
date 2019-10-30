@@ -67,6 +67,7 @@ brew 'brew-cask-completion'
 
 cask 'alfred3'
 cask '1password'
+cask 'notion'
 cask 'cloudapp'
 cask 'dash'
 cask 'docker'
