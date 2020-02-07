@@ -20,7 +20,6 @@ task install: %w[
   install:asdf_plugins
   install:shell_improvements
   install:configure_itermocil
-  install:configure_sublime
   install:macos_customization
 ]
 

@@ -5,6 +5,7 @@ alias dotfiles="code ~/.dotfiles"
 
 # Shell
 # =====
+alias src="source ~/.zshrc"
 alias ..="cd .."
 alias ...="cd ../.."
 alias grep="grep --color=auto"
@@ -36,6 +37,13 @@ alias bi="b install --jobs=2"
 alias bu="b update"
 alias be="b exec"
 alias bo="b open"
+
+# Git
+alias ggp="git push origin $(current_branch)"
+alias ggl="git pull origin $(current_branch)"
+alias ggfl="git pull origin $(current_branch)"
+alias gac="git add . && git commit"
+alias gvai="git add . && git commit --amend --no-edit && ggp"
 
 # Ruby on Rails
 # =====

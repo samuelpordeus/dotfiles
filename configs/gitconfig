@@ -23,7 +23,7 @@
   lol = !"git add -A; git commit -am \"$(echo $(curl -s http://whatthecommit.com/index.txt)\"\")\""
   ma = merge --abort
   mc = merge --continue
-  pf = push --force-with-lease
+  fl = push --force-with-lease
   pom = push origin master
   prune = fetch --prune
   r = reset
