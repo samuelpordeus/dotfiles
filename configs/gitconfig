@@ -43,9 +43,10 @@
   undo = reset --soft HEAD^
   wd = diff --color-words
   wip = !git add . && git commit -am 'WIP :construction:'
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [core]
-  editor = code
+  editor = vim
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -R
   whitespace = warn
