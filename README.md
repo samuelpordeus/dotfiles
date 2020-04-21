@@ -7,7 +7,7 @@ macOS and developer environment preferences
 Clone this repository:
 
 ```bash
-git clone https://github.com/ricardoruwer/dotfiles.git ~/.dotfiles
+git clone https://github.com/samuelpordeus/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
