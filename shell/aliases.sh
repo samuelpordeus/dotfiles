@@ -24,6 +24,7 @@ alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias alert='osascript -e "display notification \"Stuff is done.\" with title \"Back to work!\""; tput bel'
+alias awslogin='saml2aws login --session-duration=14400 --force'
 
 # Show/hide hidden files in Finder
 # ================================

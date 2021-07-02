@@ -17,6 +17,10 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="./bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
+export ERL_AFLAGS="-kernel shell_history enabled"
+export PATH="$PATH:/Users/samuelpordeus/.asdf/installs/elixir/1.10.2-otp-22/.mix/escripts"
+export AWS_DEFAULT_REGION=us-east-1
+export AWS_PAGER=""
 
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
