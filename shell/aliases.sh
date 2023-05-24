@@ -1,7 +1,7 @@
 # Config
 # ======
 alias reload=". ~/.zshrc && echo 'ZSH reloaded!'"
-alias dotfiles="code ~/.dotfiles"
+alias dotfiles="code ~/dotfiles"
 
 # Shell
 # =====
