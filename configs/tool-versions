@@ -1,9 +1,0 @@
-elasticsearch 2.4.6
-elixir 1.10.2
-erlang 23.1.4
-golang 1.12.9
-nodejs 12.16.0
-postgres 10.9
-redis 5.0.5
-ruby 2.7.0
-yarn 1.17.3
