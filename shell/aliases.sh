@@ -14,7 +14,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias lip="ipconfig getifaddr en0"
 alias key="cat ~/.ssh/id_rsa.pub | pbcopy; echo 'SSH key copied to clipboard!'"
 alias hex="openssl rand -hex"
-alias cat="bat"
+# alias cat="bat"
 alias g="git"
 alias fd="find . -type d -name"
 alias ff="find . -type f -name"
@@ -25,6 +25,7 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias alert='osascript -e "display notification \"Stuff is done.\" with title \"Back to work!\""; tput bel'
 alias awslogin='saml2aws login --session-duration=14400 --force'
+alias git-setup='function _git_setup() { git stash && git switch main && git pull && git switch -c "sp/$1"; }; _git_setup'
 
 # Show/hide hidden files in Finder
 # ================================

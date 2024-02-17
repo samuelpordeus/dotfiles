@@ -21,6 +21,7 @@ for file in ~/dotfiles/shell/*; do
 done;
 unset file;
 
+# Etc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . "$HOME/.asdf/asdf.sh"
