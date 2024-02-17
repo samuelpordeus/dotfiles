@@ -1,18 +1,18 @@
 # VS Code as default editor.
 export EDITOR="code -w"
 export VISUAL="$EDITOR"
+
+# General exports
 export HISTFILE="$HOME/.zsh_history"
 export HISTCONTROL="ignoreboth:erasedups" # Erase duplicates in history
 export HISTSIZE=1000000 # Max 1kk history entries
 export SAVEHIST=1000000 # Save 1kk history entries
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
-export GOPATH=~/go
 export ERL_AFLAGS="-kernel shell_history enabled"
 export AWS_DEFAULT_REGION=us-east-1
-export AWS_PAGER=""
-export BUN_INSTALL="$HOME/.bun"
 
 # PATH
+export GOPATH=~/go
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="./bin:$PATH"
