@@ -22,6 +22,7 @@ link() {
 # Shell
 link "$DOTFILES/zshrc" "$HOME/.zshrc"
 link "$DOTFILES/gitconfig" "$HOME/.gitconfig"
+link "$DOTFILES/iex.exs" "$HOME/.iex.exs"
 
 # Claude Code
 link "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
