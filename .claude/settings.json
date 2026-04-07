@@ -1,0 +1,8 @@
+{
+  "deny": [
+    "Read(file_path=**/secrets.sh)",
+    "Edit(file_path=**/secrets.sh)",
+    "Write(file_path=**/secrets.sh)",
+    "Bash(command=*secrets.sh*)"
+  ]
+}

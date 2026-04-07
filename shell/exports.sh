@@ -10,6 +10,9 @@ export SAVEHIST=1000000 # Save 1kk history entries
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export AWS_DEFAULT_REGION=us-east-1
+export ZSH=$HOME/.oh-my-zsh
+export WORKER=true
+export CONSOLE_LOG_LEVEL="error"
 
 # PATH
 export GOPATH=~/go
@@ -18,7 +21,16 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="./bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 export PATH="$PATH:/Users/samuelpordeus/.asdf/installs/elixir/1.10.2-otp-22/.mix/escripts"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$PATH:/Users/samuelpordeus/.local/bin"
+
+# opencode
+export PATH="/Users/samuelpordeus/.opencode/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";

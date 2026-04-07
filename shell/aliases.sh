@@ -25,6 +25,8 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias alert='osascript -e "display notification \"Stuff is done.\" with title \"Back to work!\""; tput bel'
 alias awslogin='saml2aws login --session-duration=14400 --force'
 alias git-setup='function _git_setup() { git stash && git switch main && git pull && git switch -c "sp/$1"; }; _git_setup'
+alias google-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 # Show/hide hidden files in Finder
 # ================================

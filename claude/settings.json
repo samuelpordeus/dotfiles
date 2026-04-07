@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:hexdocs.pm)",
+      "mcp__ide__getDiagnostics",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(mix:*)",
+      "Bash(MIX_ENV=test mix:*)",
+      "Bash(MIX_ENV=dev mix:*)",
+      "Bash(source:*)",
+      "Bash(python3:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(cp:*)",
+      "Bash(chmod:*)",
+      "Bash(xargs:*)",
+      "Bash(echo:*)",
+      "Bash(printf:*)",
+      "Bash(pwd)",
+      "Bash(which:*)",
+      "Bash(env:*)",
+      "Bash(yarn:*)",
+      "Bash(brew:*)",
+      "Bash(curl:*)",
+      "Bash(jq:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(cut:*)",
+      "Bash(tr:*)",
+      "Bash(diff:*)",
+      "Bash(set:*)",
+      "Bash(direnv:*)",
+      "Bash(asdf:*)",
+      "Bash(iex:*)",
+      "Bash(psql:*)",
+      "Bash(pg_isready:*)",
+      "Bash(terminal-notifier:*)",
+      "Bash(lsof:*)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Needs approval' -message 'Waiting for your input' -sender com.anthropic.claudefordesktop -group claude-code"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Work complete' -message 'Ready for review' -sender com.anthropic.claudefordesktop -group claude-code"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "elixir-lsp@claude-code-elixir": true,
+    "mix-format@claude-code-elixir": true,
+    "mix-compile@claude-code-elixir": true,
+    "elixir@claude-code-elixir": true,
+    "linear@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "playwright@claude-plugins-official": false
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "medium",
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/dotfiles/claude/statusline-command.sh"
+  }
+}
