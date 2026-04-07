@@ -12,6 +12,7 @@ This symlinks everything into place:
 - `~/.zshrc` — shell config (sources `zshrc` which loads everything from `shell/`)
 - `~/.gitconfig` — git aliases and settings
 - `~/.iex.exs` — Elixir/IEx config
+- `~/.config/ghostty/config` — Ghostty terminal config
 - `~/.claude/settings.json`, `commands/`, `statusline-command.sh` — Claude Code config
 
 ## Structure
@@ -24,6 +25,8 @@ shell/
   asdf.sh       — asdf version manager
   others.sh     — direnv, misc tools
   secrets.sh    — API keys (gitignored)
+ghostty/
+  config              — Ghostty terminal settings
 claude/
   settings.json       — Claude Code settings
   commands/           — custom slash commands
