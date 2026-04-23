@@ -19,15 +19,33 @@ link() {
   echo "  $dst -> $src"
 }
 
+# Link every top-level item from a repo directory into a target directory.
+# This keeps the app-specific layout explicit while avoiding one link() call
+# per new file or folder.
+link_dir_contents() {
+  local src_dir="$1" dst_dir="$2"
+  local item name
+
+  mkdir -p "$dst_dir"
+
+  shopt -s nullglob dotglob
+  for item in "$src_dir"/*; do
+    name="$(basename "$item")"
+    link "$item" "$dst_dir/$name"
+  done
+  shopt -u nullglob dotglob
+}
+
 # Shell
 link "$DOTFILES/zshrc" "$HOME/.zshrc"
 link "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 link "$DOTFILES/iex.exs" "$HOME/.iex.exs"
-link "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
+link_dir_contents "$DOTFILES/ghostty" "$HOME/.config/ghostty"
 
 # Claude Code
-link "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
-link "$DOTFILES/claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
-link "$DOTFILES/claude/commands" "$HOME/.claude/commands"
+link_dir_contents "$DOTFILES/claude" "$HOME/.claude"
+
+# Pi
+link_dir_contents "$DOTFILES/pi/agent" "$HOME/.pi/agent"
 
 echo "Done!"

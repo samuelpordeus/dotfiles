@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm /Users/samuelpordeus/.claude/settings.json)",
+      "Bash(ln -s /Users/samuelpordeus/dotfiles/claude/settings.json /Users/samuelpordeus/.claude/settings.json)",
+      "Bash(rm /Users/samuelpordeus/.claude/statusline-command.sh)",
+      "Bash(ln -s /Users/samuelpordeus/dotfiles/claude/statusline-command.sh /Users/samuelpordeus/.claude/statusline-command.sh)",
+      "Bash(rm -rf /Users/samuelpordeus/.claude/commands)",
+      "Bash(ln:*)",
+      "WebFetch(domain:ghostty.org)",
+      "Bash(tmux -V)",
+      "Bash(tmux list-sessions:*)",
+      "Bash(tmux show-options:*)",
+      "Bash(tmux kill-server:*)",
+      "Bash(tmux source-file:*)",
+      "Bash(tmux display-message:*)",
+      "Bash(tmux list-keys:*)",
+      "Bash(tmux send-keys:*)"
+    ]
+  }
+}

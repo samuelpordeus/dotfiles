@@ -60,7 +60,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Needs approval' -message 'Waiting for your input' -sender com.anthropic.claudefordesktop -group claude-code"
+            "command": "osascript -e 'display notification \"Waiting for your input\" with title \"Claude Code\" subtitle \"Needs approval\"'"
           }
         ]
       }
@@ -70,11 +70,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Work complete' -message 'Ready for review' -sender com.anthropic.claudefordesktop -group claude-code"
+            "command": "osascript -e 'display notification \"Ready for review\" with title \"Claude Code\" subtitle \"Work complete\"'"
           }
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/dotfiles/claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "elixir-lsp@claude-code-elixir": true,
@@ -82,15 +86,18 @@
     "mix-compile@claude-code-elixir": true,
     "elixir@claude-code-elixir": true,
     "linear@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
     "github@claude-plugins-official": true,
     "playwright@claude-plugins-official": false
   },
-  "alwaysThinkingEnabled": true,
+  "extraKnownMarketplaces": {
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    }
+  },
   "effortLevel": "medium",
   "skipDangerousModePermissionPrompt": true,
-  "statusLine": {
-    "type": "command",
-    "command": "bash ~/dotfiles/claude/statusline-command.sh"
-  }
+  "skipAutoPermissionPrompt": true
 }

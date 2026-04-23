@@ -12,8 +12,11 @@ This symlinks everything into place:
 - `~/.zshrc` — shell config (sources `zshrc` which loads everything from `shell/`)
 - `~/.gitconfig` — git aliases and settings
 - `~/.iex.exs` — Elixir/IEx config
-- `~/.config/ghostty/config` — Ghostty terminal config
-- `~/.claude/settings.json`, `commands/`, `statusline-command.sh` — Claude Code config
+- everything under `ghostty/` → `~/.config/ghostty/`
+- everything under `claude/` → `~/.claude/`
+- everything under `pi/agent/` → `~/.pi/agent/`
+
+That means new top-level files or folders inside `ghostty/`, `claude/`, or `pi/agent/` get linked automatically without changing `setup.sh`.
 
 ## Structure
 
@@ -31,4 +34,10 @@ claude/
   settings.json       — Claude Code settings
   commands/           — custom slash commands
   statusline-command.sh — status line script
+pi/
+  agent/
+    settings.json     — Pi global settings
+    AGENTS.md         — Pi global instructions
+    agents/           — custom Pi subagents
+    extensions/       — custom Pi extensions
 ```

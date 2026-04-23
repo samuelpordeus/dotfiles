@@ -1,0 +1,19 @@
+{
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.4",
+  "defaultThinkingLevel": "high",
+  "enabledModels": [
+    "openai-codex/*"
+  ],
+  "hideThinkingBlock": true,
+  "treeFilterMode": "no-tools",
+  "shellCommandPrefix": "shopt -s expand_aliases\n[ -f ~/dotfiles/shell/aliases.sh ] && source ~/dotfiles/shell/aliases.sh",
+  "packages": [
+    "npm:pi-elixir",
+    "npm:pi-subagents"
+  ],
+  "extensions": [
+    "extensions/compact-tool-output.ts"
+  ],
+  "lastChangelogVersion": "0.69.0"
+}
