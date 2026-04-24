@@ -40,7 +40,6 @@ link_dir_contents() {
 link "$DOTFILES/zshrc" "$HOME/.zshrc"
 link "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 link "$DOTFILES/iex.exs" "$HOME/.iex.exs"
-link_dir_contents "$DOTFILES/ghostty" "$HOME/.config/ghostty"
 
 # Claude Code
 link_dir_contents "$DOTFILES/claude" "$HOME/.claude"

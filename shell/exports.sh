@@ -20,12 +20,19 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="./bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
-export PATH="$PATH:/Users/samuelpordeus/.asdf/installs/elixir/1.10.2-otp-22/.mix/escripts"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="$PATH:/Users/samuelpordeus/.local/bin"
+export PATH="$PATH:$HOME/.asdf/installs/elixir/1.10.2-otp-22/.mix/escripts"
+# Homebrew: prefer Apple Silicon, fall back to Linuxbrew, then Intel macOS
+for brew_prefix in /opt/homebrew /home/linuxbrew/.linuxbrew /usr/local; do
+  if [ -x "$brew_prefix/bin/brew" ]; then
+    export PATH="$brew_prefix/bin:$brew_prefix/sbin:$PATH"
+    break
+  fi
+done
+unset brew_prefix
+export PATH="$PATH:$HOME/.local/bin"
 
 # opencode
-export PATH="/Users/samuelpordeus/.opencode/bin:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

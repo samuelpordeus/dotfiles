@@ -21,8 +21,13 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 HIST_STAMPS='dd/mm/yyyy'
 
 # Loading our .dotfiles (aliases, functions, exports, extras)
-# ~/.extra can be used for settings you don't want to commit.
-for file in ~/dotfiles/shell/*; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+# Shared files live in shell/*.sh; OS-specific ones in shell/os/{macos,linux}.sh.
+for file in ~/dotfiles/shell/*.sh; do
+  [ -r "$file" ] && source "$file"
+done
+unset file
+
+case "$(uname -s)" in
+  Darwin) [ -r ~/dotfiles/shell/os/macos.sh ] && source ~/dotfiles/shell/os/macos.sh ;;
+  Linux)  [ -r ~/dotfiles/shell/os/linux.sh ] && source ~/dotfiles/shell/os/linux.sh ;;
+esac

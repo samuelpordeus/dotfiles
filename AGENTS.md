@@ -11,8 +11,8 @@ This repository is my personal dotfiles setup.
 - Edit the source files in this repo, not the files under `$HOME`.
 - When adding a new managed config, update both `setup.sh` and `README.md`.
 - Keep shell config split under `shell/`; keep `zshrc` as the loader.
-- Keep app-specific config in app-specific directories like `claude/`, `ghostty/`, and `pi/`.
-- Prefer macOS/Homebrew-friendly paths unless told otherwise.
+- Keep app-specific config in app-specific directories like `claude/` and `pi/`.
+- Prefer portable paths (use `$HOME`, detect Homebrew prefix) so the repo works on both macOS and Ubuntu.
 
 ## Safety
 - Do not read from or modify `shell/secrets.sh` unless explicitly asked.

@@ -52,7 +52,7 @@
       "Bash(terminal-notifier:*)",
       "Bash(lsof:*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "hooks": {
     "Notification": [
@@ -60,7 +60,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Waiting for your input\" with title \"Claude Code\" subtitle \"Needs approval\"'"
+            "command": "bash ~/dotfiles/claude/notify.sh 'Needs approval' 'Waiting for your input'"
           }
         ]
       }
@@ -70,7 +70,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Ready for review\" with title \"Claude Code\" subtitle \"Work complete\"'"
+            "command": "bash ~/dotfiles/claude/notify.sh 'Work complete' 'Ready for review'"
           }
         ]
       }
