@@ -44,6 +44,20 @@ else
   log "  already present"
 fi
 
+log "Installing MesloLGS Nerd Font (required for powerlevel10k glyphs)"
+FONT_DIR="$HOME/.local/share/fonts"
+mkdir -p "$FONT_DIR"
+for variant in Regular Bold Italic "Bold%20Italic"; do
+  name="MesloLGS NF ${variant//%20/ }.ttf"
+  if [ ! -f "$FONT_DIR/$name" ]; then
+    curl -fsSL -o "$FONT_DIR/$name" \
+      "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20${variant}.ttf"
+  fi
+done
+if command -v fc-cache >/dev/null 2>&1; then
+  fc-cache -f "$FONT_DIR" >/dev/null 2>&1 || true
+fi
+
 log "Installing asdf"
 if [ ! -d "$HOME/.asdf" ]; then
   git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.14.0
