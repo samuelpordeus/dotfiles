@@ -10,7 +10,8 @@
   "shellCommandPrefix": "shopt -s expand_aliases\n[ -f ~/dotfiles/shell/aliases.sh ] && source ~/dotfiles/shell/aliases.sh",
   "packages": [
     "npm:pi-elixir",
-    "npm:pi-subagents"
+    "npm:pi-subagents",
+    "npm:pi-web-access"
   ],
   "extensions": [
     "extensions/compact-tool-output.ts"
