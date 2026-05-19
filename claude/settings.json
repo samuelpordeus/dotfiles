@@ -86,8 +86,10 @@
     "mix-compile@claude-code-elixir": true,
     "elixir@claude-code-elixir": true,
     "linear@claude-plugins-official": true,
-    "github@claude-plugins-official": true,
-    "playwright@claude-plugins-official": false
+    "github@claude-plugins-official": false,
+    "playwright@claude-plugins-official": false,
+    "stripe@claude-plugins-official": true,
+    "pg@aiguide": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -95,9 +97,22 @@
         "source": "github",
         "repo": "JuliusBrussee/caveman"
       }
+    },
+    "cloudflare": {
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/skills"
+      }
+    },
+    "aiguide": {
+      "source": {
+        "source": "github",
+        "repo": "timescale/pg-aiguide"
+      }
     }
   },
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "agentPushNotifEnabled": true
 }
