@@ -20,6 +20,7 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="./bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
+export PATH=/opt/homebrew/bin:$PATH
 export PATH="$PATH:$HOME/.asdf/installs/elixir/1.10.2-otp-22/.mix/escripts"
 # Homebrew: prefer Apple Silicon, fall back to Linuxbrew, then Intel macOS
 for brew_prefix in /opt/homebrew /home/linuxbrew/.linuxbrew /usr/local; do

@@ -1,4 +1,4 @@
-# AGENTS.md
+# CLAUDE.md
 
 This repository is my personal dotfiles setup.
 
@@ -11,11 +11,12 @@ This repository is my personal dotfiles setup.
 - Edit the source files in this repo, not the files under `$HOME`.
 - When adding a new managed config, update both `setup.sh` and `README.md`.
 - Keep shell config split under `shell/`; keep `zshrc` as the loader.
-- Keep app-specific config in app-specific directories like `claude/` and `pi/`.
+- Keep app-specific config in app-specific directories like `claude/`.
 - Prefer portable paths (use `$HOME`, detect Homebrew prefix) so the repo works on both macOS and Ubuntu.
 
 ## Safety
-- Do not read from or modify `shell/secrets.sh` unless explicitly asked.
+- Secrets live in the 1Password document `dotfiles-secrets`, loaded at shell startup by `shell/secrets_1p.sh`. Do not fetch, print, or edit that document (e.g. `op document get`, the `secrets` function) unless explicitly asked.
+- Do not read from or modify `shell/secrets.sh` (legacy, gitignored local file) unless explicitly asked.
 - Never print, copy, or commit secrets.
 - Call out any destructive or machine-specific change before making it.
 

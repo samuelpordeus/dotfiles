@@ -30,3 +30,19 @@ alias git-setup='function _git_setup() { git stash && git switch main && git pul
 
 # AWS
 alias awslogin='saml2aws login --session-duration=14400 --force'
+
+# cat renders markdown with glow when every argument is a .md file and output
+# is the terminal; pipes, redirects and anything else get plain cat.
+if command -v glow >/dev/null 2>&1; then
+  cat() {
+    if [ -t 1 ] && [ $# -gt 0 ]; then
+      local f
+      for f in "$@"; do
+        case "$f" in *.md) ;; *) command cat "$@"; return ;; esac
+      done
+      glow -p -w "${COLUMNS:-100}" "$@"
+    else
+      command cat "$@"
+    fi
+  }
+fi

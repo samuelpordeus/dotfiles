@@ -31,6 +31,8 @@ link_dir_contents() {
   shopt -s nullglob dotglob
   for item in "$src_dir"/*; do
     name="$(basename "$item")"
+    # Skip names passed as extra args (linked separately).
+    [[ " ${*:3} " == *" $name "* ]] && continue
     link "$item" "$dst_dir/$name"
   done
   shopt -u nullglob dotglob
@@ -43,9 +45,9 @@ link "$DOTFILES/iex.exs" "$HOME/.iex.exs"
 link "$DOTFILES/p10k.zsh" "$HOME/.p10k.zsh"
 
 # Claude Code
-link_dir_contents "$DOTFILES/claude" "$HOME/.claude"
-
-# Pi
-link_dir_contents "$DOTFILES/pi/agent" "$HOME/.pi/agent"
+link_dir_contents "$DOTFILES/claude" "$HOME/.claude" skills .DS_Store
+# Skills are linked one by one so ~/.claude/skills stays a real dir
+# (Claude writes its own synced skills there).
+link_dir_contents "$DOTFILES/claude/skills" "$HOME/.claude/skills" .DS_Store
 
 echo "Done!"

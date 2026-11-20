@@ -50,27 +50,20 @@
       "Bash(psql:*)",
       "Bash(pg_isready:*)",
       "Bash(terminal-notifier:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "mcp__pencil"
     ],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "hooks": {
-    "Notification": [
+    "SessionStart": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/dotfiles/claude/notify.sh 'Needs approval' 'Waiting for your input'"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/dotfiles/claude/notify.sh 'Work complete' 'Ready for review'"
+            "command": "/bin/sh -c 'rex __internal session-start --agent claude --feature-session-naming=false 2>/dev/null || true'",
+            "timeout": 5
           }
         ]
       }
@@ -81,15 +74,12 @@
     "command": "bash ~/dotfiles/claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "elixir-lsp@claude-code-elixir": true,
-    "mix-format@claude-code-elixir": true,
-    "mix-compile@claude-code-elixir": true,
-    "elixir@claude-code-elixir": true,
     "linear@claude-plugins-official": true,
     "github@claude-plugins-official": false,
-    "playwright@claude-plugins-official": false,
     "stripe@claude-plugins-official": true,
-    "pg@aiguide": true
+    "figma@claude-plugins-official": true,
+    "datadog@claude-plugins-official": true,
+    "cloudflare@cloudflare": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -111,8 +101,9 @@
       }
     }
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "theme": "auto"
 }

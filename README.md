@@ -23,9 +23,9 @@ This symlinks everything into place:
 - `~/.gitconfig` — git aliases and settings
 - `~/.iex.exs` — Elixir/IEx config
 - everything under `claude/` → `~/.claude/`
-- everything under `pi/agent/` → `~/.pi/agent/`
+- each skill under `claude/skills/` → `~/.claude/skills/<name>` (the folder itself stays local, since Claude keeps its own synced skills there)
 
-That means new top-level files or folders inside `claude/` or `pi/agent/` get linked automatically without changing `setup.sh`.
+That means new top-level files or folders inside `claude/` or `claude/skills/` get linked automatically without changing `setup.sh`.
 
 ## Structure
 
@@ -36,18 +36,20 @@ shell/
   plugins.sh    — oh-my-zsh plugins + fzf keybindings (macOS & Linux paths)
   asdf.sh       — asdf version manager
   others.sh     — direnv, misc tools
-  secrets.sh    — API keys (gitignored)
+  secrets_1p.sh — loads API keys from 1Password (see Secrets below)
+  secrets.sh    — optional local-only overrides (gitignored)
   os/
     macos.sh    — macOS-only aliases (pbcopy, defaults, /Applications, …)
     linux.sh    — Linux-only aliases (xclip, apt update, …)
 claude/
+  CLAUDE.md           — global Claude Code instructions (all projects)
   settings.json       — Claude Code settings
-  commands/           — custom slash commands
+  skills/             — global Claude Code skills (available in every session)
   statusline-command.sh — status line script
-pi/
-  agent/
-    settings.json     — Pi global settings
-    AGENTS.md         — Pi global instructions
-    agents/           — custom Pi subagents
-    extensions/       — custom Pi extensions
 ```
+
+## Secrets
+
+API keys are stored in the 1Password document `dotfiles-secrets` (Private vault), not in the repo. On shell startup, `shell/secrets_1p.sh` fetches it with the 1Password CLI and evals it, so it needs `op` installed and signed in (it's skipped silently if `op` isn't available).
+
+- `secrets` — opens the document in `nano`, saves it back to 1Password, and re-sources it in the current shell.
