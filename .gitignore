@@ -1,2 +1,3 @@
 shell/secrets.sh
-.aider*.DS_Store
+.aider*
+.DS_Store
